@@ -1,91 +1,44 @@
-# No AI Slop
+# No AI Slop 中文版 (no-ai-slop-zh)
 
-Remove 20+ patterns of AI slop from your writing without flattening your personal voice.
+> **专治中文写作中的 AI 塑料味、大厂黑话、公文官腔与爹味说教，让文字像活人一样说话。**
 
-https://github.com/user-attachments/assets/f3055450-78eb-4672-880a-88a4fa54bde9
+本项目基于 [petergyang/no-ai-slop](https://github.com/petergyang/no-ai-slop) 深度重构，专为**中文本土语境**定制。不同于简单的英文直译，本项目针对现代中文大模型（GPT-4、Claude、Kimi、DeepSeek等）最常犯的“成语堆砌、大厂黑话、公文八股、假大空升华、欧化翻译腔”等顽疾，提供了手术刀级别的去塑料味规范。
 
-## Problem
+---
 
-AI makes it easy to generate clean writing that all sounds the same. Even the best models keep producing lines like:
+## 为什么需要中文定制版？
 
-- “It’s not X. It’s Y.”
-- “What nobody tells you is…”
-- “The future isn’t coming. It’s already here.”
+现在的 AI 改写中文，往往越改越糟糕：
+- **成语开会**：“毋庸置疑，这项技术的落地方兴未艾，二者相辅相成……”（看似华丽，实则空洞）
+- **大厂黑话泛滥**：“以此为抓手打通全链路，全面赋能业务生态闭环……”（充斥着让人窒息的汇报感）
+- **文末强行上价值**：“这不仅是一场技术的洗礼，更是对人类未来的深情寄语……”（假大空的鸡汤哲理尾巴）
+- **好为人师的爹味**：“我们需要清醒地认识到，唯有……才能……”（居高临下的说教感）
 
-When you use AI to edit, it can also smooth away the vocabulary, cadence, humor, and imperfections that make the writing sound like you.
+`no-ai-slop-zh` 坚持**汪曾祺与王小波式的现代汉语审美**：**语言像水洗过一样干净，用活人的大白话写作，坚决捍卫原作者的真实个性与粗粝感。**
 
-## How to install No AI Slop
+---
 
-The easiest way to install the skill is to paste this into ChatGPT, Claude Code, Codex, or your favorite coding agent:
+## 真实修改案例对比
 
-```text
-Install the /no-ai-slop skill globally from https://github.com/petergyang/no-ai-slop
-```
+### 案例 1：消灭大厂黑话
+* ❌ **AI 典型腔调**：
+  > “我们要深刻把握技术变革的底层逻辑，以此为核心抓手多措并举，打通前后链路，全面赋能业务生态的高效闭环。”
+* ✅ **人类原生语言**：
+  > “我们用这个新工具把前后环节连起来，帮业务把运转成本降下来。”
 
-You can also install it with `npx`:
+### 案例 2：切除文末“假大空升华”
+* ❌ **AI 典型腔调**：
+  > “……新版本将检索速度提升了 40%。这不仅是一次代码的跃迁，更是团队对卓越工程的不懈求索。在汹涌澎湃的技术浪潮中，让我们共同期待它掀起崭新的篇章。”
+* ✅ **人类原生语言**：
+  > “……新版本将检索速度提升了 40%。接下来团队会重点优化多模态文件的解析支持。” *(直截了当停在事实与下一步行动上)*
 
-```sh
-npx skills add petergyang/no-ai-slop --skill no-ai-slop --global --yes
-```
+---
 
-## How to use No AI Slop
+## 如何安装使用
 
-### Edit your writing
+### 方式 1：作为 Agent Skill 安装（推荐）
 
-```text
-/no-ai-slop (your writing)
-```
-
-The skill removes the AI slop patterns, preserves your personal voice, and lists what it changed.
-
-### Detect slop
-
-```text
-/no-ai-slop is this slop? (your writing)
-```
-
-The skill quotes every slop pattern it found without guessing whether AI wrote the text.
-
-### Generate slop for fun
+在支持 Agent Skills 的平台（如 Antigravity、Claude Code、Codex 等），直接输入：
 
 ```text
-Draft an AI slop post about (topic)
-```
-
-Use it to generate the most cringe AI slop possible as satire.
-
-## The slop that this skill catches
-
-No AI Slop checks for 20+ patterns, including:
-
-1. **Binary contrasts.** “It’s not X. It’s Y.”
-2. **Throat-clearing openers.** “Here’s the thing,” “Let me be clear”
-3. **Faux-insight setups.** “What nobody tells you,” “The part everyone misses”
-4. **Colon reveals.** “The best part: it learns.”
-5. **Dramatic fragments.** “That’s it. That’s the whole thing.”
-6. **Superficial analysis.** “highlighting the team’s commitment to innovation”
-7. **Importance puffery.** “marks a pivotal moment,” “a testament to”
-8. **Weasel attribution.** “experts agree,” “studies show”
-9. **Synonym cycling.** “The agent handles your email. The assistant drafts replies.”
-10. **Fake-profound endings.** “The future isn’t coming. It’s already here.”
-
-It also checks the fundamentals: Lead with the point when that helps, use active voice, untangle hard-to-follow sentences, and prefer concrete details over abstractions.
-
-## What’s inside
-
-- [`SKILL.md`](skills/no-ai-slop/SKILL.md) contains the editing rules and workflow.
-- [`eval.md`](skills/no-ai-slop/eval.md) contains the checks the skill runs on its work.
-- [`.codex-plugin/plugin.json`](.codex-plugin/plugin.json) contains the ChatGPT and Codex plugin metadata.
-- [`build_plugin.py`](scripts/build_plugin.py) builds and validates the plugin package.
-
-No AI Slop is also available as a plugin in ChatGPT.
-
-## Want more great AI skills?
-
-Check out [Behind the Craft](https://behindthecraft.com), my personal AI system with over a dozen other quality skills and courses.
-
-Subscribe to my [YouTube channel](https://www.youtube.com/@PeterYangYT?sub_confirmation=1) and [newsletter](https://creatoreconomy.so) for practical AI tutorials and interviews.
-
-## License
-
-MIT
+Install the /no-ai-slop-zh skill globally from https://github.com/Yang327/no-ai-slop-zh
